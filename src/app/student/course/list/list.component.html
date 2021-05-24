@@ -1,0 +1,26 @@
+<div style='margin:0% 8% 0% 8%'>
+    <!-- <a routerLink='/teacher/add_class' class='btn btn-primary'>add new class</a>
+    <br><br> -->
+    <h4>class list</h4>
+    <hr>
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Course title</th>
+                <th>homework link</th>
+                <th>submit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let studentCourse of studentCourses ">
+                <td>{{studentCourse.classId}}</td>
+                <td>{{studentCourse.title}}</td>
+                <td><button class='btn btn-link' routerLink="homework/{{studentCourse.classId}}" [disabled]="!studentCourse.submit" > homework</button></td>
+                <td><button class='btn btn-primary' [disabled]="studentCourse.submit" (click)="joinClass(studentCourse.classId)"  > join </button></td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</div>

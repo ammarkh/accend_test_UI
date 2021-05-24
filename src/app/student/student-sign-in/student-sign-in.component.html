@@ -1,0 +1,25 @@
+<div class="text-center container">
+    <div style="margin: 13%;" class="col-8">
+        <h3>Student Sign In</h3>
+
+        <form #form="ngForm" (submit)="onSubmit(form)">
+            <div class="form-group">
+                <label>username</label>
+                <input class="form-control form-label" name="username" #username="ngModel"
+                    [(ngModel)]="studentService.formData.username" placeholder="Enter username" required>
+
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" name="password" #password="ngModel"
+                    [(ngModel)]="studentService.formData.password" placeholder="Password" required>
+            </div>
+            <div class="form-check">
+
+                <a routerLink='/student/register'>register new student</a>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
+        </form>
+    </div>
+</div>

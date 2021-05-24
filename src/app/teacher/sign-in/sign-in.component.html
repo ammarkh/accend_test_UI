@@ -1,0 +1,25 @@
+<div class="text-center container">
+    <div style="margin: 13%;" class="col-8">
+        <h3>Teacher Sign In</h3>
+
+        <form #form="ngForm" (submit)="onSubmit(form)">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input  class="form-control form-label" name="username" #username="ngModel" [(ngModel)]="teacherService.formData.username"
+                    placeholder="Enter username">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                    else.</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" name="password" #password="ngModel" [(ngModel)]="teacherService.formData.password"  placeholder="Password">
+            </div>
+            <div class="form-check">
+
+                <a routerLink='/teacher/register'>register new teacher</a>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>

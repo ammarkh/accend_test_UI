@@ -1,0 +1,11 @@
+<div style="margin: 0 10% 0 10%;">
+    <h3>add class form </h3>
+    <br>
+    <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+        <div class="form-group">
+            <label>Class Title</label>
+            <input name="title" #title="ngModel" [(ngModel)]="courseService.formData.title" class="form-control" placeholder="course title" required>
+        </div>
+        <button type="submit" class="btn btn-primary mb-2" [disabled]="form.invalid">add class </button>
+    </form>
+</div>

@@ -1,0 +1,79 @@
+<!-- <h3>Register new Teacher</h3>
+
+<form #form="ngForm" autocomplete="off">
+   
+     <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Enter email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">full name</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Enter full name">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div> -->
+<!-- <div>
+
+        <a routerLink='/teacher/register'>register new teacher</a>
+    </div> -->
+<!-- <button type="submit" class="btn btn-primary"> Register </button>
+</form> -->
+
+<div class="contrainer mb-3">
+    <h3 class="text-center">Register new teacher</h3>
+    <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label> username </label>
+                    <input name="username" #username="ngModel" [(ngModel)]="teacherService.formData.username"
+                        class="form-control" placeholder="username" required>
+                    <div class="validation-error" *ngIf="username.invalid && username.touched"> this field is required
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label> Full name </label>
+                    <input name="fullName" #fullName="ngModel" [(ngModel)]="teacherService.formData.fullName"
+                        class="form-control" placeholder="Full name" required>
+                    <div class="validation-error" *ngIf="fullName.invalid && fullName.touched"> this field is required
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label> Password </label>
+                    <input type='password' name="password" #password="ngModel"
+                        [(ngModel)]="teacherService.formData.password" class="form-control" placeholder="Password"
+                        required>
+                    <div class="validation-error" *ngIf="password.invalid && password.touched">this field is required
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-5"></div>
+            <div class="col-3">
+                <div class="d-grid gap-2">
+                    <button [disabled]="form.invalid" class="btn btn-primary btn-block" type="submit">Register</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

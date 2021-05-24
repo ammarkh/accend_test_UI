@@ -1,0 +1,44 @@
+<div class="contrainer mb-3">
+    <h3 class="text-center">add new Homework</h3>
+    <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label> Homework title </label>
+                    <input name="title" #title="ngModel" [(ngModel)]="homeworkService.formData.title"
+                        class="form-control" placeholder="title" required>
+                    <div class="validation-error" *ngIf="title.invalid && title.touched"> this field is required
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label> end date </label>
+                    <br>
+                    <p-calendar name="dueDate" #dueDate="ngModel" [(ngModel)]="homeworkService.formData.dueDate"
+                        dateFormat="dd.mm.yy"></p-calendar>
+                    <!-- <div class="validation-error" *ngIf="fullName.invalid && fullName.touched"> this field is required -->
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-5"></div>
+            <div class="col-3">
+                <div class="d-grid gap-2">
+                    <button [disabled]="form.invalid" class="btn btn-primary btn-block" type="submit">add new
+                        Homework</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

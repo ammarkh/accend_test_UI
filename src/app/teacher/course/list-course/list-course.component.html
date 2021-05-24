@@ -1,0 +1,24 @@
+<div style='margin:0% 8% 0% 8%'>
+    <a routerLink='/teacher/add_class' class='btn btn-primary'>add new class</a>
+    <br><br>
+    <h4>class list</h4>
+    <hr>
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Course title</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let course of courses ">
+                <td>{{course.classId}}</td>
+                <td>{{course.title}}</td>
+                <td><a routerLink="homework/{{course.classId}}"> homework</a></td>
+            </tr>
+         
+        </tbody>
+    </table>
+
+</div>
